@@ -64,10 +64,10 @@ public class UserService : IUserService
     private object checkPassword(string password)
     {
         if (password is null or "")
-            return new PasswordEntryException("Password is required. Please put in a password.");
+            throw new PasswordEntryException("Password is required. Please put in a password.");
         if (password.Length < 8)
         {
-            return new PasswordEntryException("Password should be more than 8 characters long.");
+            throw new PasswordEntryException("Password should be more than 8 characters long.");
         }
         return true;
     }
