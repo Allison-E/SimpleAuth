@@ -12,7 +12,7 @@ public class AddUserRequest
     [Required(ErrorMessage = "Last name required")]
     public string LastName { get; set; }
 
-    [EmailAddress(ErrorMessage = "Please put in a valid email")]
+    [RegularExpression(@"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", ErrorMessage = "Please put in a valid email")]
     [Required(ErrorMessage = "Email required")]
     public string Email { get; set; }
 

@@ -3,6 +3,10 @@
 public enum Gender
 {
     /// <summary>
+    /// Prefer not to say.
+    /// </summary>
+    PreferNotToSay,
+    /// <summary>
     /// A female.
     /// </summary>
     Female,
@@ -10,8 +14,4 @@ public enum Gender
     /// A male.
     /// </summary>
     Male,
-    /// <summary>
-    /// Prefer not to say.
-    /// </summary>
-    PreferNotToSay,
 }

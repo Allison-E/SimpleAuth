@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace SimpleAuth.UnitTests.Domain;
+namespace SimpleAuth.UnitTests.Contracts.Dto;
 
 internal static class Validate
 {
