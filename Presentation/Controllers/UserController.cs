@@ -5,6 +5,9 @@ using SimpleAuth.Contracts.Dto;
 
 namespace SimpleAuth.Presentation.Controllers;
 
+/// <summary>
+/// The user controller.
+/// </summary>
 [Route("/users")]
 public class UserController: ControllerBase
 {
@@ -22,7 +25,7 @@ public class UserController: ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> AddUser(AddUserRequest user) 
+    public async Task<IActionResult> AddUser([FromBody] AddUserRequest user) 
     {
         try
         {
@@ -51,7 +54,7 @@ public class UserController: ControllerBase
     [HttpPost("/authenticate")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-    public async Task<IActionResult> Authenticate(AuthenticateUserRequest userDetails)
+    public async Task<IActionResult> Authenticate([FromBody] AuthenticateUserRequest userDetails)
     {
         try
         {
