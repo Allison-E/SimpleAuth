@@ -14,7 +14,6 @@ public class User
     [Required(ErrorMessage = "Email required.")]
     public string Email { get; set; }
 
-    [Required(ErrorMessage = "Password required.")]
     public string PasswordHash { get; set; }
 
     public Gender Gender { get; set; }
