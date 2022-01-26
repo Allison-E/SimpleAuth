@@ -61,7 +61,7 @@ public class UserService : IUserService
             throw new InvalidDetailsException(invalidMessage);
     }
 
-    private object checkPassword(string password)
+    private void checkPassword(string password)
     {
         if (password is null or "")
             throw new PasswordEntryException("Password is required. Please put in a password.");
@@ -69,6 +69,5 @@ public class UserService : IUserService
         {
             throw new PasswordEntryException("Password should be more than 8 characters long.");
         }
-        return true;
     }
 }
