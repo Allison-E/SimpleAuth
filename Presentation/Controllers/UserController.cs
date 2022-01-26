@@ -27,10 +27,20 @@ public class UserController: ControllerBase
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> AddUser([FromBody] AddUserRequest user) 
     {
+        if (!ModelState.IsValid)
+        {
+            var message = string.Join(" | ", ModelState.Values.SelectMany(x => x.Errors).Select(o => o.ErrorMessage));
+            return BadRequest(new
+            {
+                Message = message,
+                StatusCode= 400,
+            });
+        }
+
         try
         {
             var result = await service.Add(user);
-            return result ? Ok() : StatusCode(500, new
+            return result ? Ok("Account created successfully.") : StatusCode(500, new
             {
                 Message = "Could not process your request.",
                 StatusCode = 501,
@@ -56,6 +66,16 @@ public class UserController: ControllerBase
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     public async Task<IActionResult> Authenticate([FromBody] AuthenticateUserRequest userDetails)
     {
+        if (!ModelState.IsValid)
+        {
+            var message = string.Join(" | ", ModelState.Values.SelectMany(x => x.Errors).Select(o => o.ErrorMessage));
+            return BadRequest(new
+            {
+                Message = message,
+                StatusCode = 400,
+            });
+        }
+
         try
         {
             return Ok(await service.Authenticate(userDetails));

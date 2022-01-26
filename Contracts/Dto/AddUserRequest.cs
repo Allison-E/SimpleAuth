@@ -1,21 +1,24 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using SimpleAuth.Domain.Enums;
 
 namespace SimpleAuth.Contracts.Dto;
 
 public class AddUserRequest
 {
-    [Required]
+    [Required(ErrorMessage = "First name required")]
     public string FirstName { get; set; }
 
-    [Required]
+    [Required(ErrorMessage = "Last name required")]
     public string LastName { get; set; }
 
-    [Required]
+    [EmailAddress(ErrorMessage = "Please put in a valid email")]
+    [Required(ErrorMessage = "Email required")]
     public string Email { get; set; }
 
-    [Required]
+    [Required(ErrorMessage = "Password required")]
     public string Password { get; set; }
 
+    [DefaultValue(Gender.PreferNotToSay)]
     public Gender Gender { get; set; }
 }

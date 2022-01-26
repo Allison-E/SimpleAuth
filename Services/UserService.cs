@@ -14,6 +14,8 @@ public class UserService : IUserService
 
     public async Task<bool> Add(AddUserRequest user)
     {
+        // Does this account already exist?
+        var existingAcc = context.Users.Where(x => x.Email == user.Email).CountAsync();
         string passwordHash;
 
         try
@@ -26,14 +28,20 @@ public class UserService : IUserService
             throw e;
         }
 
-        await context.Users.AddAsync(new User()
+        await existingAcc;
+        if (existingAcc.Result == 0)
         {
-            FirstName = user.FirstName,
-            LastName = user.LastName,
-            Email = user.Email,
-            PasswordHash = passwordHash,
-            Gender = user.Gender,
-        });
+            await context.Users.AddAsync(new User()
+            {
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
+                PasswordHash = passwordHash,
+                Gender = user.Gender,
+            });
+        }
+        else
+            throw new AccountExistsException($"An account with the email {user.Email} already exists.");
 
         return await context.SaveChangesAsync() > 0;
     }
