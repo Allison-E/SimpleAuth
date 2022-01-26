@@ -1,6 +1,6 @@
 ﻿namespace SimpleAuth.Contracts.Dto;
 
-public class VerifyUserRequest
+public class AuthenticateUserRequest
 {
     public string Email { get; set; }
 
