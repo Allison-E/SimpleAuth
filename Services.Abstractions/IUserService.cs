@@ -12,7 +12,7 @@ public interface IUserService
     /// <exception cref="Domain.Exceptions.PasswordEntryException">
     ///     This is thrown when the input password is not acceptable (less than 8 characters or empty).
     /// </exception>
-    public Task<bool> Add(AddUserRequest user);
+    public Task<bool> Register(AddUserRequest user);
 
     /// <summary>
     /// Tries to log the user in with the user's email and password.
@@ -22,5 +22,5 @@ public interface IUserService
     /// <exception cref="SimpleAuth.Domain.Exceptions.InvalidDetailsException">
     ///     When this is returned, either the email or password provided is invalid.
     /// </exception>
-    public Task<object> Authenticate(AuthenticateUserRequest userDetails);
+    public Task<object> Login(LoginUserRequest userDetails);
 }

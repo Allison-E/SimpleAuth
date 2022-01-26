@@ -25,7 +25,7 @@ public class UserController: ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> AddUser([FromBody] AddUserRequest user) 
+    public async Task<IActionResult> Register([FromBody] AddUserRequest user) 
     {
         if (!ModelState.IsValid)
         {
@@ -39,7 +39,7 @@ public class UserController: ControllerBase
 
         try
         {
-            var result = await service.Add(user);
+            var result = await service.Register(user);
             return result ? Ok("Account created successfully.") : StatusCode(500, new
             {
                 Message = "Could not process your request.",
@@ -57,14 +57,14 @@ public class UserController: ControllerBase
     }
 
     /// <summary>
-    /// Authenticates users.
+    /// Login users.
     /// </summary>
     /// <param name="userDetails">The login details of the user.</param>
     /// <returns></returns>
-    [HttpPost("/authenticate")]
+    [HttpPost("/login")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-    public async Task<IActionResult> Authenticate([FromBody] AuthenticateUserRequest userDetails)
+    public async Task<IActionResult> Login([FromBody] LoginUserRequest userDetails)
     {
         if (!ModelState.IsValid)
         {
@@ -78,7 +78,7 @@ public class UserController: ControllerBase
 
         try
         {
-            return Ok(await service.Authenticate(userDetails));
+            return Ok(await service.Login(userDetails));
         }
         catch (Exception e)
         {

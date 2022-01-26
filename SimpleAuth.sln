@@ -9,15 +9,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleAuth.UnitTests", "Sim
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{CBCDD7BA-EFF9-434C-B4EF-963E6155AA65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\Persistence.csproj", "{0C71A169-3308-4F2E-8615-41FE5E66E1F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Persistence\Persistence.csproj", "{0C71A169-3308-4F2E-8615-41FE5E66E1F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Abstractions", "Services.Abstractions\Services.Abstractions.csproj", "{81E71B24-A770-4827-8C8F-710C76BDEFE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services.Abstractions", "Services.Abstractions\Services.Abstractions.csproj", "{81E71B24-A770-4827-8C8F-710C76BDEFE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{8CF8BD99-EB71-4EE2-9778-8FE94B37C5D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{8CF8BD99-EB71-4EE2-9778-8FE94B37C5D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{9BF9D07B-3B20-4726-8B1E-75A766C1B52F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "Contracts\Contracts.csproj", "{9BF9D07B-3B20-4726-8B1E-75A766C1B52F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation", "Presentation\Presentation.csproj", "{86567488-140E-483F-9142-FEE4428C344C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation", "Presentation\Presentation.csproj", "{86567488-140E-483F-9142-FEE4428C344C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

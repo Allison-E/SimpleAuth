@@ -12,7 +12,7 @@ public class UserService : IUserService
 
     public UserService(IUserContext context) => this.context = context;
 
-    public async Task<bool> Add(AddUserRequest user)
+    public async Task<bool> Register(AddUserRequest user)
     {
         // Does this account already exist?
         var existingAcc = context.Users.Where(x => x.Email == user.Email).CountAsync();
@@ -46,7 +46,7 @@ public class UserService : IUserService
         return await context.SaveChangesAsync() > 0;
     }
 
-    public async Task<object> Authenticate(AuthenticateUserRequest userDetails)
+    public async Task<object> Login(LoginUserRequest userDetails)
     {
         string invalidMessage = "Email or password is incorrect.";
 

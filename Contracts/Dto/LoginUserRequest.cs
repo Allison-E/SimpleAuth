@@ -2,7 +2,7 @@
 
 namespace SimpleAuth.Contracts.Dto;
 
-public class AuthenticateUserRequest
+public class LoginUserRequest
 {
     [EmailAddress(ErrorMessage = "Please put in a valid email")]
     [Required(ErrorMessage = "Email required")]
