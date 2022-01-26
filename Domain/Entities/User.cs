@@ -5,13 +5,10 @@ namespace SimpleAuth.Domain.Entities;
 
 public class User
 {
-    [Required(ErrorMessage = "First name required.")]
     public string FirstName { get; set; }
 
-    [Required(ErrorMessage = "Last name required.")]
     public string LastName { get; set; }
 
-    [Required(ErrorMessage = "Email required.")]
     public string Email { get; set; }
 
     public string PasswordHash { get; set; }
