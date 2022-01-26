@@ -16,5 +16,8 @@ public class User
 
     [Required(ErrorMessage = "Password required.")]
     public string PasswordHash { get; set; }
+
     public Gender Gender { get; set; }
+
+    public DateTime JoinedAt { get; set; }
 }
