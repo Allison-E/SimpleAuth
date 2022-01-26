@@ -38,7 +38,7 @@ public class UserService : IUserService
         return await context.SaveChangesAsync() > 0;
     }
 
-    public async Task<object> Verify(VerifyUserRequest userDetails)
+    public async Task<object> Authenticate(AuthenticateUserRequest userDetails)
     {
         string invalidMessage = "Email or password is incorrect.";
 
