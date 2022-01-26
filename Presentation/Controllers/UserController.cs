@@ -51,11 +51,11 @@ public class UserController: ControllerBase
     [HttpPost("/authenticate")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-    public async Task<IActionResult> Authenticate(VerifyUserRequest userDetails)
+    public async Task<IActionResult> Authenticate(AuthenticateUserRequest userDetails)
     {
         try
         {
-            return Ok(await service.Verify(userDetails));
+            return Ok(await service.Authenticate(userDetails));
         }
         catch (Exception e)
         {
