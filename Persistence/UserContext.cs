@@ -13,4 +13,6 @@ public class UserContext : DbContext, IUserContext
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(UserContext).Assembly);
     }
+
+    Task<int> IUserContext.SaveChangesAsync() => SaveChangesAsync();
 }

@@ -5,4 +5,6 @@ namespace SimpleAuth.Persistence;
 public interface IUserContext
 {
     public DbSet<User> Users { get; set; }
+
+    public Task<int> SaveChangesAsync();
 }
