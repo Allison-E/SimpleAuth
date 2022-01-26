@@ -35,7 +35,6 @@ builder.Services.AddCors(options =>
 builder.Services.AddDbContext<UserContext>(options =>
 {
     options.UseSqlServer(builder.Configuration["Db:ConnectionString"]);
-    options.EnableSensitiveDataLogging();
 });
 
 #endregion

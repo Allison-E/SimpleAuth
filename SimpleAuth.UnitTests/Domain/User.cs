@@ -41,16 +41,4 @@ internal class User
         Assert.IsTrue(Validate.ValidateEntity(user)
             .Any(x => x.MemberNames.Contains("Email") && x.ErrorMessage.Contains("Email required.")));
     }
-
-    [Test]
-    public void PasswordHashRequired()
-    {
-        entity.User user = new()
-        {
-            LastName = "Allison",
-        };
-
-        Assert.IsTrue(Validate.ValidateEntity(user)
-            .Any(x => x.MemberNames.Contains("PasswordHash") && x.ErrorMessage.Contains("Password required.")));
-    }
 }
